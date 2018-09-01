@@ -1,6 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "name": "songtxt",
+    "scopeName": "text.songtxt",
     "patterns": [
         {
             "include": "#keywords"
@@ -11,10 +12,9 @@
         {
             "patterns":
              [{
-                "name": "keyword.other",
-                "match": "\b(verse)\b" 
+                "name": "keyword",
+                "match": "\\[.*\\]" 
             }]
         }
-    },
-    "scopeName": "text.songtxt"
+    }
 }
