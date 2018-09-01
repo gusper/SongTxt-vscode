@@ -16,10 +16,8 @@
     "main": "./out/extension",
     "contributes": {
         "commands": [
-            {
-                "command": "extension.enableSongtxt",
-                "title": "Enable Songtxt"
-            }
+            {"command": "extension.enableSongtxt", "title": "Enable Songtxt"},
+            {"command": "extension.disableSongtxt", "title": "Disable Songtxt"}
         ]
     },
     "scripts": {
