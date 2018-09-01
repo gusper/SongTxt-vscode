@@ -16,22 +16,49 @@
     "main": "./out/extension",
     "contributes": {
         "commands": [
-            {"command": "extension.enableSongtxt", "title": "Enable Songtxt"},
-            {"command": "extension.disableSongtxt", "title": "Disable Songtxt"}
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.21",
-        "tslint": "^5.8.0",
-        "@types/node": "^8.10.25",
-        "@types/mocha": "^2.2.42"
+            {
+                "command": "extension.enableSongtxt",
+                "title": "Enable Songtxt"
+            },
+            {
+                "command": "extension.disableSongtxt",
+                "title": "Disable Songtxt"
+            }
+        ],
+        "languages": [
+            {
+                "id": "songtxt",
+                "aliases": [
+                    "SongTxt",
+                    "Songtxt",
+                    "SongTXT",
+                    "SONGTXT"
+                ],
+                "extensions": [
+                    ".txt"
+                ]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "songtxt",
+                "scopeName": "text.songtxt",
+                "path": "./syntaxes/songtxt.tmLanguage.json"
+            }
+        ],
+        "scripts": {
+            "vscode:prepublish": "npm run compile",
+            "compile": "tsc -p ./",
+            "watch": "tsc -watch -p ./",
+            "postinstall": "node ./node_modules/vscode/bin/install",
+            "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        },
+        "devDependencies": {
+            "typescript": "^2.6.1",
+            "vscode": "^1.1.21",
+            "tslint": "^5.8.0",
+            "@types/node": "^8.10.25",
+            "@types/mocha": "^2.2.42"
+        }
     }
 }

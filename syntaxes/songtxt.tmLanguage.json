@@ -1,0 +1,20 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "songtxt",
+    "patterns": [
+        {
+            "include": "#keywords"
+        }
+    ],
+    "repository": {
+        "keywords": 
+        {
+            "patterns":
+             [{
+                "name": "keyword.other",
+                "match": "\b(verse)\b" 
+            }]
+        }
+    },
+    "scopeName": "text.songtxt"
+}
