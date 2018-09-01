@@ -4,11 +4,11 @@
     "scopeName": "text.songtxt",
     "patterns": [
         {
-            "include": "#keywords"
+            "include": "#sections"
         }
     ],
     "repository": {
-        "keywords": 
+        "sections": 
         {
             "patterns":
              [{
