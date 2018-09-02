@@ -10,7 +10,7 @@ export function activate(context: ExtensionContext) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log('Songtxt extension is now active.');
+    console.log('SongTxt extension is now active.');
 
     // create a new word counter
     let stateNotification = new StateNotification();
@@ -38,19 +38,18 @@ class StateNotification {
     
     public enabled() {
         // Show notification
-        window.showInformationMessage('Songtxt mode is now enabled');
+        window.showInformationMessage('SongTxt mode is now enabled');
         
         // Update the status bar
-        this._statusBarItem.text = 'Songtxt';
+        this._statusBarItem.text = 'SongTxt';
         this._statusBarItem.show();
     }
 
     public disabled() {
         // Show notification
-        window.showInformationMessage('Songtxt mode is now disabled');
+        window.showInformationMessage('SongTxt mode is now disabled');
         
         // Update the status bar
-        this._statusBarItem.text = 'Songtxt disabled';
         this._statusBarItem.hide();
     }
 
