@@ -5,16 +5,46 @@
     "patterns": [
         {
             "include": "#sections"
+        },
+        {
+            "include": "#chords"
+        },
+        {
+            "include": "#comments"
         }
     ],
     "repository": {
-        "sections": 
-        {
-            "patterns":
-             [{
-                "name": "keyword",
-                "match": "\\[.*\\]" 
-            }]
+        "sections": {
+            "patterns": [
+                {
+                    "name": "keyword",
+                    "match": "\\[.*\\]"
+                }
+            ]
+        },
+        "chords": {
+            "patterns": [
+                {
+                    "name": "string",
+                    "match": "(C|D|E|F|G|A|B)(b|#)?(m|min|maj|7)?(add|sus)?(2|4|5|6|7|9|10|11|13)?(\\z|\\n|\\r| )"
+                },
+                {
+                    "name": "string",
+                    "match": "N\\.C\\."
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment",
+                    "match": "\\(.*\\)"
+                },
+                {
+                    "name": "string",
+                    "match": "N\\.C\\."
+                }
+            ]
         }
     }
 }
