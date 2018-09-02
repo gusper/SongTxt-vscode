@@ -1,9 +1,9 @@
 {
     "name": "songtxt",
     "displayName": "Songtxt",
-    "description": "Adds support for editing text files for songs including lyrics, chords, guitar tablature, etc.",
+    "description": "Adds support for editing text files for songs including lyrics, chords, guitar tablature, etc. The goal is to stick to the Ultimate Guitar site's formatting standards.",
     "version": "0.0.1",
-    "publisher": "GusPerez",
+    "publisher": "gusper",
     "engines": {
         "vscode": "^1.26.0"
     },
