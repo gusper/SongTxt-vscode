@@ -25,12 +25,19 @@
         "chords": {
             "patterns": [
                 {
+                    "comment": "Chords above lyrics",
                     "name": "string",
-                    "match": "(C|D|E|F|G|A|B)(b|#)?(m|min|maj|7)?(add|sus)?(2|4|5|6|7|9|10|11|13)?(\\z|\\n|\\r| )"
+                    "match": "[A-G](b|#)?(m|min|maj)?7?(add|sus)?(2|4|5|6|7|9|10|11|13)?(\\z|\\n|\\r|\\/| )"
                 },
                 {
+                    "comment": "No chord symbols",
                     "name": "string",
                     "match": "N\\.C\\."
+                },
+                {
+                    "comment": "Tuning notes",
+                    "name": "storage.type",
+                    "match": "[A-G|e][b|#]?(?=\\|)"
                 }
             ]
         },
@@ -39,10 +46,6 @@
                 {
                     "name": "comment",
                     "match": "\\(.*\\)"
-                },
-                {
-                    "name": "string",
-                    "match": "N\\.C\\."
                 }
             ]
         }
