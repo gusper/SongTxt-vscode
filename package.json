@@ -45,9 +45,7 @@
                 "id": "songtxt",
                 "aliases": [
                     "SongTxt",
-                    "Songtxt",
-                    "SongTXT",
-                    "SONGTXT"
+                    "Songtxt"
                 ],
                 "extensions": [
                     ".txt"
@@ -59,6 +57,12 @@
                 "language": "songtxt",
                 "scopeName": "text.songtxt",
                 "path": "./syntaxes/songtxt.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "songtxt",
+                "path": "./snippets/songtxt.json"
             }
         ],
         "scripts": {
@@ -74,12 +78,6 @@
             "tslint": "^5.8.0",
             "@types/node": "^8.10.25",
             "@types/mocha": "^2.2.42"
-        },
-        "snippets": [
-            {
-                "language": "songtxt",
-                "path": "./snippets/songtxt-snippets.json"
-            }
-        ]
+        }
     }
 }
