@@ -2,6 +2,10 @@
 
 SongTxt is a simple Visual Studio Code extension that improves the experience around typing in music transcriptions in plain text files. It is built to follow the formatting guidelines used by [Ultimate Guitar](https://www.ultimate-guitar.com/contribution/help/rubric).
 
+## Install
+
+Install the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=gusper.songtxt) or search for `SongTxt` from the Extensions pane in Visual Studio Code.
+
 ## Features
 
 This is a *very* early version that should be considered alpha level at most. 
