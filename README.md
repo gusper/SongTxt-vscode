@@ -27,7 +27,7 @@ This is a *very* early version that should be considered alpha level at most.
 
 ## Release Notes
 
-- See [CHANGELOG](.\CHANGELOG.md) file.
+- See [CHANGELOG](CHANGELOG.md) file.
 
 ## Requirements
 
