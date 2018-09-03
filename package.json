@@ -14,6 +14,7 @@
         "url": "https://github.com/gusper/SongTxt-vscode"
     },
     "homepage": "https://github.com/gusper/SongTxt-vscode",
+    "icon": "./images/logo.png",
     "bugs": {
         "url": "https://github.com/gusper/SongTxt-vscode/issues",
         "email": "songtxt@zinkolabs.com"

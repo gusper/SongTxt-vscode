@@ -8,13 +8,13 @@ Install the extension from the [Visual Studio Marketplace](https://marketplace.v
 
 ## Features
 
-This is a *very* early version that should be considered alpha level at most. 
+This is a *very* early version that should be considered alpha level at most.
 
 - Syntax highlighting/colorization
-    - Chord names above lyrics
-    - Section headers (e.g., `[Verse]`, `[Chorus]`)
-    - Tunings in guitar tablature
-    - Comments (text in parentheses)
+  - Chord names above lyrics
+  - Section headers (e.g., `[Verse]`, `[Chorus]`)
+  - Tunings in guitar tablature
+  - Comments (text in parentheses)
 
 ![Screenshot](https://i.imgur.com/FWrCtGM.gif)
 
