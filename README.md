@@ -15,6 +15,8 @@ This is a *very* early version that should be considered alpha level at most.
   - Section headers (e.g., `[Verse]`, `[Chorus]`)
   - Tunings in guitar tablature
   - Comments (text in parentheses)
+- Code snippets for insertion guitar tablature sections
+  - E.g., hit Ctrl+Space, -6 and you'll see a few tunings to pick from
 
 ![Screenshot](https://i.imgur.com/FWrCtGM.gif)
 
