@@ -4,6 +4,20 @@
     "description": "Adds support for editing text files for songs including lyrics, chords, guitar tablature, etc.",
     "version": "0.1.0",
     "publisher": "gusper",
+    "author": {
+        "name": "Gus Perez",
+        "email": "gus@gusperez.com",
+        "url": "http://gusperez.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gusper/SongTxt-vscode"
+    },
+    "homepage": "https://github.com/gusper/SongTxt-vscode",
+    "bugs": {
+        "url": "https://github.com/gusper/SongTxt-vscode/issues",
+        "email": "songtxt@zinkolabs.com"
+    },
     "engines": {
         "vscode": "^1.26.0"
     },
