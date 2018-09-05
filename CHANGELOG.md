@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Surrounds With_ support for brackets. Just select the text (e.g., `Verse`) you want to surround with brackets and hit the `[` key to change it to `[Verse]`
 
+### Changed
+
+- Disabled _Indent Guides_ (`editor.renderIndentGuides`) as they just cluttered things up for SongTxt files.
+
 ## [0.1.2] - 2018-09-03
 
 ### Added

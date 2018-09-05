@@ -66,6 +66,11 @@
                 "path": "./snippets/songtxt.json"
             }
         ],
+        "configurationDefaults": {
+            "[songtxt]": {
+                "editor.renderIndentGuides": false
+            }
+        },
         "scripts": {
             "vscode:prepublish": "npm run compile",
             "compile": "tsc -p ./",
