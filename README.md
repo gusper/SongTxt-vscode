@@ -8,17 +8,9 @@ Install the extension from the [Visual Studio Marketplace](https://marketplace.v
 
 ## Features
 
-This is a *very* early version that should be considered alpha level at most.
+See the list of features and documentation at the [SongTxt Wiki](https://github.com/gusper/SongTxt-vscode/wiki).
 
-- Syntax highlighting/colorization
-  - Chord names above lyrics
-  - Section headers (e.g., `[Verse]`, `[Chorus]`)
-  - Tunings in guitar tablature
-  - Comments (text in parentheses)
-- Code snippets for insertion guitar tablature sections
-  - E.g., hit `Ctrl+Space`, `-6` (or `-7` for 7-string tunings) and you'll see a few tunings to pick from
-- _Surrounds With_ support for brackets
-  - Just select the text (e.g., `Verse`) you want to surround with brackets and hit the `[` key to change it to `[Verse]`
+## Screenshot
 
 ![Screenshot](https://i.imgur.com/FWrCtGM.gif)
 
