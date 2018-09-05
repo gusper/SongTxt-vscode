@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.2] - 2018-09-03
 
-- Added code snippets for guitar tablature sections/lines (e.g., try Ctrl+Space, -6s)
+- Added code snippets for guitar tablature sections/lines (e.g., try `Ctrl+Space`, `-6s`)
 
 ## [0.1.1] - 2018-09-03
 
