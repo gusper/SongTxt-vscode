@@ -12,7 +12,7 @@ See the list of features and documentation at the [SongTxt Wiki](https://github.
 
 ## Screenshot
 
-![Screenshot](https://i.imgur.com/FWrCtGM.gif)
+![Screenshot](https://i.imgur.com/gFU6lS8.png)
 
 ## Known Issues
 
