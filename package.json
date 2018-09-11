@@ -48,7 +48,8 @@
                     "Songtxt"
                 ],
                 "extensions": [
-                    ".txt"
+                    ".txt",
+                    ".tab"
                 ],
                 "configuration": "./language-configuration.json"
             }
