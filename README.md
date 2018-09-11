@@ -16,7 +16,6 @@ See the list of features and documentation at the [SongTxt Wiki](https://github.
 
 ## Known Issues
 
-- Automatically kicks in for all .txt files. This is probably not desirable in all cases. Will figure out a better model soon.
 - The two commands the extension adds currently do nothing other than pop up a notification when executed. More to come soon there as well.
 
 ## Release Notes
