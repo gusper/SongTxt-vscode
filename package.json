@@ -69,7 +69,8 @@
         ],
         "configurationDefaults": {
             "[songtxt]": {
-                "editor.renderIndentGuides": false
+                "editor.renderIndentGuides": false, 
+                "editor.occurrencesHighlight": false
             }
         },
         "scripts": {
