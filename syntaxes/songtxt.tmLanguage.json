@@ -27,7 +27,7 @@
                 {
                     "comment": "Chords above lyrics",
                     "name": "string",
-                    "match": "[A-G](b|#)?(m|min|maj)?7?(add|sus)?(2|4|5|6|7|9|10|11|13)?(\\z|\\n|\\r|\\/| )"
+                    "match": "[CDEFGAB](b|bb|#|##)?(m|M|min|maj|minmaj|dim|aug|\\+)?(\\d)?(sus|sus2|sus4)?(add)?(2|4|5|6|7|9|10|11|13)?(#11)?(b5)?(\\z|\\n|\\r|\\/| )"
                 },
                 {
                     "comment": "No chord symbols",
@@ -37,7 +37,7 @@
                 {
                     "comment": "Tuning notes",
                     "name": "storage.type",
-                    "match": "[A-G|e][b|#]?(?=\\|)"
+                    "match": "[CDEFGAB|e][b|bb|#|##]?(?=\\|)"
                 }
             ]
         },
