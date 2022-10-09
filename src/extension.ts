@@ -1,12 +1,11 @@
 'use strict';
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import { window, commands, Disposable, ExtensionContext, StatusBarAlignment, StatusBarItem, TextDocument } 
-    from 'vscode';
+import * as vscode from 'vscode';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
-export function activate(context: ExtensionContext) {
+export function activate(context: vscode.ExtensionContext) {
 
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
@@ -15,10 +14,10 @@ export function activate(context: ExtensionContext) {
     // create a new word counter
     let stateNotification = new StateNotification();
 
-    let enableCommand = commands.registerCommand('extension.enableSongtxt', () => {
+    let enableCommand = vscode.commands.registerCommand('extension.enableSongtxt', () => {
         stateNotification.enabled();
     });
-    let disableCommand = commands.registerCommand('extension.disableSongtxt', () => {
+    let disableCommand = vscode.commands.registerCommand('extension.disableSongtxt', () => {
         stateNotification.disabled();
     });
     
@@ -34,11 +33,11 @@ export function deactivate() {
 
 class StateNotification {
     
-    private _statusBarItem: StatusBarItem = window.createStatusBarItem(StatusBarAlignment.Left);
+    private _statusBarItem: vscode.StatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
     
     public enabled() {
         // Show notification
-        window.showInformationMessage('SongTxt mode is now enabled');
+        vscode.window.showInformationMessage('SongTxt mode is now enabled');
         
         // Update the status bar
         this._statusBarItem.text = 'SongTxt';
@@ -47,7 +46,7 @@ class StateNotification {
 
     public disabled() {
         // Show notification
-        window.showInformationMessage('SongTxt mode is now disabled');
+        vscode.window.showInformationMessage('SongTxt mode is now disabled');
         
         // Update the status bar
         this._statusBarItem.hide();

@@ -20,7 +20,7 @@
         "email": "songtxt@zinkolabs.com"
     },
     "engines": {
-        "vscode": "^1.26.0"
+        "vscode": "^1.72.0"
     },
     "categories": [
         "Other"
@@ -77,18 +77,22 @@
             "vscode:prepublish": "npm run compile",
             "compile": "tsc -p ./",
             "watch": "tsc -watch -p ./",
-            "postinstall": "node ./node_modules/vscode/bin/install",
-            "test": "npm run compile && node ./node_modules/vscode/bin/test"
+            "pretest": "npm run compile && npm run lint",
+            "lint": "eslint src --ext ts",
+            "test": "node ./out/test/runTest.js"
         },
         "devDependencies": {
-            "typescript": "^2.6.1",
-            "vscode": "^1.1.21",
-            "tslint": "^5.8.0",
-            "@types/node": "^8.10.25",
-            "@types/mocha": "^2.2.42"
+            "@types/vscode": "^1.72.0",
+            "@types/glob": "^8.0.0",
+            "@types/mocha": "^10.0.0",
+            "@types/node": "16.x",
+            "@typescript-eslint/eslint-plugin": "^5.38.1",
+            "@typescript-eslint/parser": "^5.38.1",
+            "eslint": "^8.24.0",
+            "glob": "^8.0.3",
+            "mocha": "^10.0.0",
+            "typescript": "^4.8.4",
+            "@vscode/test-electron": "^2.1.5"
         }
-    },
-    "dependencies": {
-        "vscode": "^1.1.37"
     }
 }
