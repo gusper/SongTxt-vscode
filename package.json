@@ -17,7 +17,7 @@
     "icon": "images/logo.png",
     "bugs": {
         "url": "https://github.com/gusper/SongTxt-vscode/issues",
-        "email": "songtxt@zinkolabs.com"
+        "email": "gus@gusperez.com"
     },
     "engines": {
         "vscode": "^1.72.0"
