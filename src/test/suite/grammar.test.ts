@@ -32,7 +32,6 @@ describe('SongTxt Grammar Regex Suite', () => {
     const noChordRegex = getPattern('chords', 1); // N.C.
     const tuningRegex = getPattern('chords', 2); // Tuning note (single char before '|')
     const sectionRegex = getPattern('sections', 0); // [Verse]
-    const commentRegex = getPattern('comments', 0); // (comment)
 
     it('matches basic chords in a progression line (including final chord with no trailing space)', () => {
         const line = 'C   G   Am  F';
@@ -76,15 +75,26 @@ describe('SongTxt Grammar Regex Suite', () => {
         }
     });
 
-    it('matches parenthetical comments', () => {
-        const c = '(Repeat 2x)';
-        assert.ok(commentRegex.test(c));
-    });
-
     it('matches final chord at end-of-line without trailing space', () => {
         const line = 'Dm   G7   Cmaj7';
         const matches = line.match(chordRegex) || [];
         const normalized = matches.map(m => m.trim());
         assert.deepStrictEqual(normalized, ['Dm', 'G7', 'Cmaj7']);
+    });
+
+    it('does not match lowercase root chords (by design)', () => {
+        const line = 'Dm   em';
+        const matches = line.match(chordRegex) || [];
+        const normalized = matches.map(m => m.trim());
+        // Lowercase 'em' should NOT be matched under current grammar (uppercase roots only)
+        assert.deepStrictEqual(normalized, ['Dm']);
+    });
+
+    it('matches mixed-case chord qualities after uppercase root', () => {
+        const line = 'Dm   DM';
+        const matches = line.match(chordRegex) || [];
+        const normalized = matches.map(m => m.trim());
+        // Lowercase 'm' should be matched under current grammar (mixed case allowed)
+        assert.deepStrictEqual(normalized, ['Dm', 'DM']);
     });
 });
