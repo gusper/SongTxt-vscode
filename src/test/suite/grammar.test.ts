@@ -21,7 +21,10 @@ function getPattern(name: string, index = 0): RegExp {
         if (!pattern.match) { throw new Error(`Pattern ${index} in '${name}' has no match`); }
     // The grammar regexes are written without delimiters; replicate TextMate default (no flags unless obviously needed)
     // We often want global matching in tests to collect all tokens.
-    return new RegExp(pattern.match, 'g');
+    // TextMate Oniguruma supports \z (end of string). JavaScript does not; \z becomes literal 'z'.
+    // Emulate \z with a lookahead for end-of-string.
+    const jsPattern = pattern.match.replace(/\\z/g, '(?=$)');
+    return new RegExp(jsPattern, 'g');
 }
 
 describe('SongTxt Grammar Regex Suite', () => {
@@ -31,8 +34,8 @@ describe('SongTxt Grammar Regex Suite', () => {
     const sectionRegex = getPattern('sections', 0); // [Verse]
     const commentRegex = getPattern('comments', 0); // (comment)
 
-    it('matches basic chords in a progression line', () => {
-        const line = 'C   G   Am  F ';// note trailing space for final chord per current grammar requirement
+    it('matches basic chords in a progression line (including final chord with no trailing space)', () => {
+        const line = 'C   G   Am  F';
         const matches = line.match(chordRegex) || [];
         // trim because regex includes trailing space in capture due to final group
         const normalized = matches.map(m => m.trim());
@@ -40,9 +43,11 @@ describe('SongTxt Grammar Regex Suite', () => {
     });
 
     it('matches chord qualities and extensions', () => {
-        const samples = ['Cmaj7 ', 'C#dim ', 'Bbmin ', 'F+ ', 'Gsus4 ', 'Eadd9 '];
+        const samples = ['Cmaj7', 'C#dim', 'Bbmin', 'F+', 'Gsus4', 'Eadd9'];
         for (const s of samples) {
-            assert.ok(chordRegex.test(s), `Expected to match: ${s}`);
+            assert.ok(chordRegex.test(s + ' '), `Expected to match with trailing space: ${s}`); // allow space after
+            chordRegex.lastIndex = 0;
+            assert.ok(chordRegex.test(s), `Expected to match end-of-line chord: ${s}`);
             chordRegex.lastIndex = 0; // reset because of /g flag
         }
     });
@@ -76,11 +81,10 @@ describe('SongTxt Grammar Regex Suite', () => {
         assert.ok(commentRegex.test(c));
     });
 
-    it('current limitation: last chord without trailing space is NOT matched (documenting behavior)', () => {
-        const line = 'C   G   Am  F'; // no trailing space
+    it('matches final chord at end-of-line without trailing space', () => {
+        const line = 'Dm   G7   Cmaj7';
         const matches = line.match(chordRegex) || [];
         const normalized = matches.map(m => m.trim());
-        // F is missing based on current grammar design; ensure we capture existing behavior
-        assert.deepStrictEqual(normalized, ['C', 'G', 'Am']);
+        assert.deepStrictEqual(normalized, ['Dm', 'G7', 'Cmaj7']);
     });
 });
