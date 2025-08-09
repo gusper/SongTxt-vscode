@@ -29,3 +29,35 @@ See the list of features and documentation at the [SongTxt Wiki](https://github.
 ## Extension Settings
 
 - None yet
+
+## Testing
+
+Currently only grammar/regex tests are maintained.
+
+### Prerequisites
+```powershell
+npm install
+```
+
+### Run Tests
+Compile then run the grammar test suite:
+```powershell
+npm run compile
+npm test
+```
+You should see output ending with something like `8 passing` (count may grow as new cases are added).
+
+### Add More Tests
+Edit `src/test/suite/grammar.test.ts`, add new `test(...)` blocks, then rerun:
+```powershell
+npm test
+```
+
+### Lint
+```powershell
+npm run lint
+```
+
+### Troubleshooting
+- If patterns disappear, confirm `syntaxes/songtxt.tmLanguage.json` still has the expected repository entries.
+- After changing regex order, update indices in the test file or refactor to search by `comment`.
