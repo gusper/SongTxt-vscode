@@ -40,14 +40,6 @@
                     "match": "[CDEFGAB|e][b|bb|#|##]?(?=\\|)"
                 }
             ]
-        },
-        "comments": {
-            "patterns": [
-                {
-                    "name": "comment",
-                    "match": "\\(.*\\)"
-                }
-            ]
         }
     }
 }
