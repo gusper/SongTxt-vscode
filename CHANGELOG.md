@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 
+## [0.1.7] - -r2025-08-16
+
+### Added
+
+- Several improvements around chord highlighting. E.g., now properly highlights slash chords, highlights less words in lyric lines it mistakes for chords, and no longer highlights apostrophes.
+
 ## [0.1.6] - 2022-08-01
 
 ### Added
