@@ -25,9 +25,9 @@
         "chords": {
             "patterns": [
                 {
-                    "comment": "Chord symbols - avoid highlighting letters that are part of English words",
+                    "comment": "Chord symbols including slash chords (e.g., G/B)",
                     "name": "string",
-                    "match": "(?:^|(?<=\\s))[CDEFGAB](b|bb|#|##)?(m|M|min|maj|minmaj|dim|aug|\\+)?(\\d)?(sus|sus2|sus4)?(add)?(2|4|5|6|7|9|10|11|13)?(#11)?(b5)?(?!\\w)(?=\\s(?![a-z])|$|\\/)"
+                    "match": "(?:^|(?<=\\s))[CDEFGAB](b|bb|#|##)?(m|M|min|maj|minmaj|dim|aug|\\+)?(\\d)?(sus|sus2|sus4)?(add)?(2|4|5|6|7|9|10|11|13)?(#11)?(b5)?(?:\\/[CDEFGAB](b|bb|#|##)?)?(?!\\w)(?=\\s(?![a-z])|$)"
                 },
                 {
                     "comment": "No chord symbols",
@@ -37,7 +37,7 @@
                 {
                     "comment": "Tuning notes",
                     "name": "storage.type",
-                    "match": "[CDEFGAB|e][b|bb|#|##]?(?=\\|)"
+                    "match": "[CDEFGABe][b|bb|#|##]?(?=\\|)"
                 }
             ]
         }

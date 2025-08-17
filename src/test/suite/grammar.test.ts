@@ -146,4 +146,12 @@ describe('SongTxt Grammar Regex Suite', () => {
         chordRegex.lastIndex = 0;
     });
 
+    it('matches slash chords correctly', () => {
+        const line = 'C   G/B   Am/C   F';
+        const matches = line.match(chordRegex) || [];
+        const normalized = matches.map(m => m.trim());
+        // Should match slash chords as complete units
+        assert.deepStrictEqual(normalized, ['C', 'G/B', 'Am/C', 'F']);
+    });
+
 });
