@@ -20,3 +20,6 @@ coverage/
 temp/
 tmp/
 .tsbuildinfo
+
+# Claude Code
+.claude
