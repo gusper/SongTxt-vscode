@@ -2,7 +2,7 @@
     "name": "songtxt",
     "displayName": "SongTxt",
     "description": "Adds support for editing text files for songs including lyrics, chords, guitar tablature, etc.",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "publisher": "gusper",
     "author": {
         "name": "Gus Perez",
@@ -20,7 +20,7 @@
         "email": "gus@gusperez.com"
     },
     "engines": {
-        "vscode": "^1.72.0"
+        "vscode": "^1.102.0"
     },
     "categories": [
         "Other"
