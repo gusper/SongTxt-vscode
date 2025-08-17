@@ -1,6 +1,6 @@
-Maybe
-Alice In Chains
-Rainier Fog (2018)
+Maybe Test Title
+Some Band
+Album (2018)
 
 Tuning: Half-step down (Eb)
 
@@ -22,15 +22,15 @@ Eb|----------------------------|----------------------------|
 
 [Verse]
 N.C.
-Long gone the days of summer
+A long gone the days of summer
 N.C.
-In L.A. it stretches longer
+A L.A. that stretches longer
 (with Riff 1)
 D
 Fading, waiting
 D
 Try to heal but the pain it won’t go
-D
+D/A
 Start with less always seems to cost more
 D
 Hating, breaking
@@ -39,7 +39,7 @@ Hating, breaking
 (with Riff 2)
 D
 Remember, come December, one day can last forever
-C                    G                   D
+C                    C/G                   D
 Ain’t nowhere that’s safe for a lowly pretender
 C            G                       D
 I’m shooting straight for the target center
@@ -66,51 +66,6 @@ Our burden is untied
 G      Am
 Let it die
 
-[Verse]
-N.C.
-I’d be lying if I said it felt right
-N.C.
-Even though I got a dog in this fight
-(with Riff 1)
-D
-Wounded, losing
-D
-People talk, in and out the words go
-D
-To be the one from where the wind it does blow
-D
-Hounded, surrounded
-
-[Pre-Chorus]
-(with Riff 2)
-D
-Remember, come December, one day can last forever
-C                    G                   D
-Ain’t nowhere that’s safe for a lowly pretender
-C            G                       D
-I’m shooting straight for the target center
-
-[Chorus]
-F                G
-Maybe you should know
-            Am             C 
-I’m feeling lonely and I’m tired, oh yeah
-F              G 
-Maybe I should go
-         Am      C 
-Got no desire to watch the last tear fall
-F               G 
-Maybe this will show
-             Am           C 
-I’m reeling, empty, uninspired, oh yeah
-F             G 
-Maybe I don’t know
-       Am             C 
-You anymore and I’m smiling
-D               F
-Our burden is untied
-G      Am
-Let it die
 
 [Solo]
 Em C (4x)
