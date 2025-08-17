@@ -20,7 +20,7 @@
         "email": "gus@gusperez.com"
     },
     "engines": {
-        "vscode": "^1.72.0"
+        "vscode": "^1.102.0"
     },
     "categories": [
         "Other"
