@@ -97,4 +97,53 @@ describe('SongTxt Grammar Regex Suite', () => {
         // Lowercase 'm' should be matched under current grammar (mixed case allowed)
         assert.deepStrictEqual(normalized, ['Dm', 'DM']);
     });
+
+    it('does NOT match chord letters within lyrics/words', () => {
+        const lyrics = "Adam sings beautifully";
+        const matches = lyrics.match(chordRegex) || [];
+        // Should not match 'A' from "Adam" since it's part of a word
+        assert.deepStrictEqual(matches, [], 'Should not match chord letters within words');
+        chordRegex.lastIndex = 0;
+    });
+
+    it('does NOT match chord names that are part of larger words', () => {
+        const text = "Can you help me? Name the chord.";
+        const matches = text.match(chordRegex) || [];
+        // Should not match 'C' from "Can" or 'Am' from "Name"
+        assert.deepStrictEqual(matches, [], 'Should not match chord patterns within larger words');
+        chordRegex.lastIndex = 0;
+    });
+
+    it('matches chords on dedicated chord lines', () => {
+        const chordLine = 'F                G';
+        const matches = chordLine.match(chordRegex) || [];
+        const normalized = matches.map(m => m.trim());
+        // Should match standalone chords separated by spaces
+        assert.deepStrictEqual(normalized, ['F', 'G']);
+    });
+
+    it('does NOT match "am" in lowercase when part of sentence', () => {
+        const text = "I am gus";
+        const matches = text.match(chordRegex) || [];
+        // Should not match 'am' since it's lowercase and part of regular text
+        assert.deepStrictEqual(matches, [], 'Should not match lowercase "am" in regular sentences');
+        chordRegex.lastIndex = 0;
+    });
+
+    it('does NOT match single letters in the middle of lyric lines', () => {
+        const lyrics = "A beautiful day";
+        const matches = lyrics.match(chordRegex) || [];
+        // Should not match 'A' when it appears at start of lyric line followed by other words
+        assert.deepStrictEqual(matches, [], 'Should not match single letters at start of lyric sentences');
+        chordRegex.lastIndex = 0;
+    });
+
+    it('does NOT match chord letters mid-sentence', () => {
+        const lyrics = "We had A great time and D minor was played";
+        const matches = lyrics.match(chordRegex) || [];
+        // Should not match 'A' or 'D' when they appear mid-sentence before other words
+        assert.deepStrictEqual(matches, [], 'Should not match chord letters before regular words in lyrics');
+        chordRegex.lastIndex = 0;
+    });
+
 });
