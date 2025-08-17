@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.7] - 2025-08-16
 
-### Added
+### Fixed
 
-- Several improvements around chord highlighting. E.g., now properly highlights slash chords, highlights less words in lyric lines it mistakes for chords, and no longer highlights apostrophes.
+- Improved chord highlighting to avoid false positives in lyrics (e.g., "A beautiful day" no longer highlights "A")
+- Added support for slash chords (e.g., G/B, Am/C)
+- Fixed apostrophes being highlighted with borders in contractions like "don't"
+- Enhanced word boundary detection for more accurate chord recognition
 
 ## [0.1.6] - 2022-08-01
 
