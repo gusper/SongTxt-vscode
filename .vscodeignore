@@ -9,3 +9,7 @@ vsc-extension-quickstart.md
 **/*.map
 **/*.ts
 .claude/**
+node_modules/**
+package-lock.json
+*.vsix
+CHANGELOG.md
