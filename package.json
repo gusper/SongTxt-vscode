@@ -2,7 +2,7 @@
     "name": "songtxt",
     "displayName": "SongTxt",
     "description": "Adds support for editing text files for songs including lyrics, chords, guitar tablature, etc.",
-    "version": "0.1.7",
+    "version": "0.1.9",
     "publisher": "gusper",
     "author": {
         "name": "Gus Perez",
@@ -14,7 +14,7 @@
         "url": "https://github.com/gusper/SongTxt-vscode"
     },
     "homepage": "https://github.com/gusper/SongTxt-vscode",
-    "icon": "images/logo.png",
+    "icon": "images/songtxt.png",
     "bugs": {
         "url": "https://github.com/gusper/SongTxt-vscode/issues",
         "email": "gus@gusperez.com"
@@ -75,12 +75,12 @@
         }
     },
     "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint -c eslintrc.json src --ext ts",
-    "test": "mocha out/test/suite/grammar.test.js"
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint -c eslintrc.json src --ext ts",
+        "test": "mocha out/test/suite/grammar.test.js"
     },
     "devDependencies": {
         "@types/mocha": "^10.0.10",
