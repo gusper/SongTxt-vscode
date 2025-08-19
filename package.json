@@ -25,9 +25,6 @@
     "categories": [
         "Other"
     ],
-    "activationEvents": [
-        "onCommand:extension.enableSongtxt"
-    ],
     "main": "./out/extension.js",
     "contributes": {
         "commands": [
