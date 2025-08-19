@@ -45,7 +45,7 @@ Compile then run the grammar test suite:
 npm run compile
 npm test
 ```
-You should see output ending with something like `8 passing` (count may grow as new cases are added).
+You should see output ending with something like `16 passing` (count may grow as new cases are added).
 
 ### Add More Tests
 Edit `src/test/suite/grammar.test.ts`, add new `test(...)` blocks, then rerun:
