@@ -20,13 +20,10 @@
         "email": "gus@gusperez.com"
     },
     "engines": {
-        "vscode": "^1.102.0"
+        "vscode": "^1.103.0"
     },
     "categories": [
         "Other"
-    ],
-    "activationEvents": [
-        "onCommand:extension.enableSongtxt"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -79,17 +76,22 @@
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile && npm run lint",
-        "lint": "eslint -c eslintrc.json src --ext ts",
+        "lint": "eslint src/**/*.ts",
         "test": "mocha out/test/suite/grammar.test.js"
     },
     "devDependencies": {
+        "@eslint/js": "^9.33.0",
         "@types/mocha": "^10.0.10",
-        "@types/node": "^16.18.126",
-        "@types/vscode": "^1.102.0",
-        "@typescript-eslint/eslint-plugin": "^5.38.1",
-        "@typescript-eslint/parser": "^5.38.1",
-        "eslint": "^8.24.0",
-        "mocha": "^10.0.0",
-        "typescript": "^4.8.4"
+        "@types/node": "^24.3.0",
+        "@types/vscode": "^1.103.0",
+        "@typescript-eslint/eslint-plugin": "^8.40.0",
+        "@typescript-eslint/parser": "^8.40.0",
+        "eslint": "^9.33.0",
+        "mocha": "^11.7.1",
+        "typescript": "^5.9.2",
+        "typescript-eslint": "^8.40.0"
+    },
+    "dependencies": {
+        "braces": "^3.0.3"
     }
 }

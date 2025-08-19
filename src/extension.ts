@@ -11,12 +11,12 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('SongTxt extension is now active.');
 
     // create a new word counter
-    let stateNotification = new StateNotification();
+    const stateNotification = new StateNotification();
 
-    let enableCommand = vscode.commands.registerCommand('extension.enableSongtxt', () => {
+    const enableCommand = vscode.commands.registerCommand('extension.enableSongtxt', () => {
         stateNotification.enabled();
     });
-    let disableCommand = vscode.commands.registerCommand('extension.disableSongtxt', () => {
+    const disableCommand = vscode.commands.registerCommand('extension.disableSongtxt', () => {
         stateNotification.disabled();
     });
     
