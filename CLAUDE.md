@@ -36,9 +36,12 @@ npm run vscode:prepublish  # Prepare extension for publishing (compiles code)
 
 **Extension Entry Point** (`src/extension.ts`)
 - Main activation/deactivation logic
-- Registers two placeholder commands: `extension.enableSongtxt` and `extension.disableSongtxt`
-- Creates status bar notification system via `StateNotification` class
-- Commands currently only show notifications (placeholder functionality)
+- Registers two functional commands: `extension.enableSongtxt` and `extension.disableSongtxt`
+- Creates status bar notification system via `StateNotification` class (in separate file)
+- Implements dynamic enable/disable of syntax highlighting for .txt/.tab files
+- Uses VS Code's `setTextDocumentLanguage` API to control language modes
+- Manages file associations programmatically (language configuration handled statically)
+- Event-driven system that maintains state across tab switches and file operations
 
 **Language Definition** (`package.json` contributes section)
 - Defines `songtxt` language for `.txt` and `.tab` files
@@ -91,7 +94,20 @@ The chord regex is complex and designed to avoid false positives in lyrics. It u
 - Allows slash chords (C/G)
 
 ### Extension Structure
-This is a standard VS Code extension with TypeScript source. The extension is minimal - most functionality comes from the TextMate grammar and language configuration rather than programmatic features.
+This is a standard VS Code extension with TypeScript source. The extension combines TextMate grammar/language configuration with programmatic features for dynamic control:
+
+**Key Implementation Details:**
+- **State Management**: Uses `context.globalState` to persist enabled/disabled state across sessions
+- **File Association Control**: Dynamically modifies VS Code's `files.associations` setting to control which files use the `songtxt` language
+- **Document Language Control**: Uses `vscode.languages.setTextDocumentLanguage()` to immediately change language modes of open documents
+- **Event Listeners**: Monitors document opening, tab switching, and editor visibility changes to maintain consistent state
+- **Modular Design**: StateNotification class separated into `src/stateNotification.ts` for better code organization
+
+**Enable/Disable Mechanism:**
+1. **Enable**: Associates .txt/.tab files with `songtxt` language, applies syntax highlighting to open documents
+2. **Disable**: Removes file associations, converts open documents to `plaintext` mode (removes highlighting)
+3. **State Persistence**: Remembers user preference and applies it on extension activation
+4. **Language Features**: Bracket matching and auto-closing handled by static `language-configuration.json`
 
 ### Build Process
 - TypeScript compiles to `out/` directory

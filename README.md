@@ -8,15 +8,26 @@ Install the extension from the [Visual Studio Marketplace](https://marketplace.v
 
 ## Features
 
-See the list of features and documentation at the [SongTxt Wiki](https://github.com/gusper/SongTxt-vscode/wiki).
+- **Syntax Highlighting**: Automatic highlighting for chords, song sections, and guitar tablature in `.txt` and `.tab` files
+- **Toggle Control**: Enable or disable SongTxt syntax highlighting on demand
+- **Status Bar Integration**: Visual indicator showing current state with one-click toggle
+- **Smart File Detection**: Automatically applies to Ultimate Guitar formatted text files
+- **Grammar Testing**: Comprehensive regex testing to ensure accurate chord recognition
+
+See the full list of features and documentation at the [SongTxt Wiki](https://github.com/gusper/SongTxt-vscode/wiki).
+
+## Commands
+
+SongTxt provides two commands accessible via the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`):
+
+- **Enable SongTxt**: Activates syntax highlighting for `.txt` and `.tab` files
+- **Disable SongTxt**: Deactivates syntax highlighting (files appear as plain text)
+
+You can also toggle between enabled/disabled states by clicking the SongTxt status bar item.
 
 ## Screenshot
 
 ![Screenshot](https://i.imgur.com/gFU6lS8.png)
-
-## Known Issues
-
-- The two commands the extension adds currently do nothing other than pop up a notification when executed. More to come soon there as well.
 
 ## Release Notes
 
