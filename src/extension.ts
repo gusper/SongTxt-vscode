@@ -112,7 +112,6 @@ async function disableLanguageAssociations(): Promise<void> {
     await fileConfiguration.update('associations', newAssociations, vscode.ConfigurationTarget.Global);
 }
 
-
 async function disableSyntaxForOpenDocuments(): Promise<void> {
     const documents = vscode.workspace.textDocuments;
     
