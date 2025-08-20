@@ -30,11 +30,13 @@
         "commands": [
             {
                 "command": "extension.enableSongtxt",
-                "title": "Enable SongTxt"
+                "title": "Enable SongTxt",
+                "category": "SongTxt"
             },
             {
                 "command": "extension.disableSongtxt",
-                "title": "Disable SongTxt"
+                "title": "Disable SongTxt",
+                "category": "SongTxt"
             }
         ],
         "languages": [

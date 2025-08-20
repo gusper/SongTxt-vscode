@@ -5,6 +5,28 @@ All notable changes to the SongTxt extension will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **Enable/Disable functionality**: Commands now provide full control over SongTxt syntax highlighting
+- **Status bar integration**: Visual indicator showing current state with one-click toggle
+- **Real-time document control**: Immediately applies changes to currently open files
+- **Persistent state management**: Remembers enabled/disabled preference across VS Code sessions
+- **Event-driven state enforcement**: Maintains correct language mode when switching tabs or opening files
+
+### Changed
+
+- Enhanced extension entry point with comprehensive state management
+- Commands now have functional implementation instead of placeholder notifications
+- Improved status bar with interactive toggle and visual state indicators
+- Updated documentation to reflect new functionality
+
+### Fixed
+
+- Commands now properly enable/disable syntax highlighting for both new and existing files
+- Resolved proxy extensibility issues when modifying VS Code configuration
+
 ## [0.1.10] - 2025-08-18
 
 ### Changed
