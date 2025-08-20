@@ -3,8 +3,7 @@
 import * as vscode from 'vscode';
 import { StateNotification } from './stateNotification';
 
-// Global variables to store language configuration disposable and document state
-let languageConfigDisposable: vscode.Disposable | undefined;
+// Global variables to store document state
 const originalLanguages = new Map<string, string>();
 let isExtensionEnabled = true;
 let documentListeners: vscode.Disposable[] = [];
@@ -56,14 +55,6 @@ async function enableSongTxtFeatures(context: vscode.ExtensionContext, stateNoti
         // Enable file associations for new files
         await enableLanguageAssociations();
         
-        // Enable language configuration
-        enableLanguageConfiguration();
-        
-        // Store disposable for cleanup
-        if (languageConfigDisposable) {
-            context.subscriptions.push(languageConfigDisposable);
-        }
-        
         // Re-enable syntax highlighting for currently open documents
         await enableSyntaxForOpenDocuments();
         
@@ -79,9 +70,6 @@ async function disableSongTxtFeatures(context: vscode.ExtensionContext, stateNot
     try {
         // Disable file associations for new files
         await disableLanguageAssociations();
-        
-        // Disable language configuration
-        disableLanguageConfiguration();
         
         // Disable syntax highlighting for currently open documents
         await disableSyntaxForOpenDocuments();
@@ -124,30 +112,6 @@ async function disableLanguageAssociations(): Promise<void> {
     await fileConfiguration.update('associations', newAssociations, vscode.ConfigurationTarget.Global);
 }
 
-function enableLanguageConfiguration(): void {
-    const languageConfig: vscode.LanguageConfiguration = {
-        brackets: [
-            ['{', '}'],
-            ['[', ']'],
-            ['(', ')'],
-            ['<', '>']
-        ],
-        autoClosingPairs: [
-            { open: '{', close: '}' },
-            { open: '[', close: ']' },
-            { open: '(', close: ')' }
-        ]
-    };
-    
-    languageConfigDisposable = vscode.languages.setLanguageConfiguration('songtxt', languageConfig);
-}
-
-function disableLanguageConfiguration(): void {
-    if (languageConfigDisposable) {
-        languageConfigDisposable.dispose();
-        languageConfigDisposable = undefined;
-    }
-}
 
 async function disableSyntaxForOpenDocuments(): Promise<void> {
     const documents = vscode.workspace.textDocuments;
