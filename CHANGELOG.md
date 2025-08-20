@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Enhanced extension entry point with comprehensive state management
 - Commands now have functional implementation instead of placeholder notifications
 - Improved status bar with interactive toggle and visual state indicators
+- Simplified implementation by removing redundant language configuration management
+- Refactored StateNotification into separate module (`src/stateNotification.ts`) for better code organization
 - Updated documentation to reflect new functionality
 
 ### Fixed
